@@ -4,14 +4,15 @@
 (function() {
     document.getElementById('guess-form').addEventListener("submit", compareUserGuess);
 
-    function compareUserGuess (event) {
+    function compareUserGuess (event: Event) {
         event.preventDefault();
 
         const secretNumber = generateSecretNumber();
-        const userNumber = (<HTMLInputElement>document.getElementById('guess')).value;
+        const userNumber: number = parseInt((<HTMLInputElement>document.getElementById('guess')).value);
+
 
         // @ts-ignore
-        if (secretNumber === userNumber) {
+        if (secretNumber == userNumber) {
             alert(`Awesome! You number ${userNumber} was correct. You can be named many things, hungry not being one of them.`);
         } else {
             alert(`Bummer... You guessed ${userNumber} and the secret number was ${secretNumber}`);
