@@ -2,7 +2,7 @@
 
 
 (function() {
-    document.getElementById('guess-form').addEventListener("click", compareUserGuess);
+    document.getElementById('guess-form').addEventListener("submit", compareUserGuess);
 
     function compareUserGuess (event) {
         event.preventDefault();
@@ -19,9 +19,8 @@
     }
 
     function generateSecretNumber() {
-        const secretNumber = getRandomArbitrary(1, 22);
+        return getRandomArbitrary(1, 22);
 
-        return secretNumber;
     }
 
     function getRandomArbitrary(min: number, max: number ) {
