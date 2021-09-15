@@ -2,14 +2,13 @@
 
 
 (function() {
-    document.getElementById('guess-form').addEventListener("submit", compareUserGuess);
+    document.getElementById('guess-form')!.addEventListener("click", compareUserGuess);
 
     function compareUserGuess (event: Event) {
         event.preventDefault();
 
         const secretNumber = generateSecretNumber();
-        const userNumber: number = parseInt((<HTMLInputElement>document.getElementById('guess')).value);
-
+        const userNumber = (<HTMLInputElement>document.getElementById('guess')).value;
 
         // @ts-ignore
         if (secretNumber == userNumber) {
@@ -20,9 +19,8 @@
     }
 
     function generateSecretNumber() {
-        return getRandomArbitrary(1, 22);
-
-
+        const secretNumber = getRandomArbitrary(1, 22);
+        return secretNumber;
     }
 
     function getRandomArbitrary(min: number, max: number ) {
