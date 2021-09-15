@@ -22,6 +22,7 @@
     function generateSecretNumber() {
         return getRandomArbitrary(1, 22);
 
+
     }
 
     function getRandomArbitrary(min: number, max: number ) {
